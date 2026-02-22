@@ -1,0 +1,111 @@
+ body{
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.screen{
+  width: 360px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+}
+
+h2{
+  margin-bottom: 15px;
+}
+
+label{
+  font-size: 14px;
+  display: block;
+  margin-top: 12px;
+}
+
+input{
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid #cfd3dc;
+}
+
+.note{
+  font-size: 13px;
+  margin-top: 12px;
+  color: #555;
+}
+
+.btn{
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.primary{ background: #2d6cdf; color: white; }
+.success{ background: #27ae60; color: white; }
+.danger{ background: #e74c3c; color: white; }
+.light{ background: #ecf0f1; color: #222; }
+
+.row{
+  display: flex;
+  gap: 10px;
+}
+
+.row .btn{
+  width: 50%;
+}
+
+.hidden{
+  display: none;
+}
+
+/* Popup overlay */
+.overlay{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup{
+  background: white;
+  width: 360px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 25px rgba(0,0,0,0.15);
+}
+
+.infoBox{
+  background: #f7f9ff;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid #d8e0ff;
+}
+
+.bigAmount{
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.risk{
+  margin-top: 10px;
+  color: #b36b00;
+  font-weight: bold;
+}
+
+.successMsg{
+  font-size: 16px;
+  margin-top: 10px;
+}

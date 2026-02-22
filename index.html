@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPI Guardian Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Screen 1: Enter Details -->
+  <div class="screen" id="screen1">
+    <h2>UPI Pay</h2>
+
+    <label>Enter Amount (₹)</label>
+    <input id="amountInput" type="number" placeholder="500" />
+
+    <label>Payee Name</label>
+    <input id="nameInput" type="text" placeholder="Gayathri" />
+
+    <label>UPI ID</label>
+    <input id="upiInput" type="text" placeholder="gayathri@ybl" />
+
+    <button class="btn primary" onclick="openVoicePopup()">
+      Continue
+    </button>
+
+    <p class="note">⚠️ Never share your UPI PIN with anyone.</p>
+  </div>
+
+  <!-- Popup: Voice Confirmation (Hidden by default) -->
+  <div class="overlay hidden" id="voicePopup">
+    <div class="popup">
+      <h3>🔊 Voice Confirmation</h3>
+
+      <p id="voiceText">
+        You are trying to pay ₹0. Is that okay?
+      </p>
+
+      <div class="row">
+        <button class="btn danger" onclick="closeVoicePopup()">No, Edit</button>
+        <button class="btn success" onclick="goToGuardian()">Yes, Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Confirmation Guardian -->
+  <div class="screen hidden" id="screen2">
+    <h2>Confirmation Guardian</h2>
+
+    <div class="infoBox">
+      <p class="bigAmount" id="showAmount">₹0</p>
+      <p><b>To:</b> <span id="showName">---</span></p>
+      <p><b>UPI ID:</b> <span id="showUpi">---</span></p>
+
+      <p class="risk">🤖 AI Risk Check: <b id="showRisk">Low</b></p>
+    </div>
+
+    <button class="btn light" onclick="readDetails()">
+      🔊 Read Details
+    </button>
+
+    <div class="row">
+      <button class="btn danger" onclick="backToEdit()">Cancel</button>
+      <button class="btn success" onclick="goToSuccess()">Pay</button>
+    </div>
+  </div>
+
+  <!-- Screen 3: Success -->
+  <div class="screen hidden" id="screen3">
+    <h2>✅ Payment Successful</h2>
+    <p class="successMsg" id="successMsgText"></p>
+
+    <button class="btn primary" onclick="restart()">
+      Done
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
